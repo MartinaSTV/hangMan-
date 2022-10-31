@@ -1,3 +1,19 @@
+* {
+
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+
+}
+
+body {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    }
+
 figure svg > * {
     opacity: 0;
 }
@@ -8,3 +24,13 @@ figure.head     svg #head      { opacity: 1; }
 figure.body     svg #body      { opacity: 1; }
 figure.arms     svg #arms      { opacity: 1; }
 figure.legs     svg #legs      { opacity: 1; }
+
+
+
+p {
+
+border-bottom: 2px solid black;
+max-width: 2rem;
+
+}
+

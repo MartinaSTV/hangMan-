@@ -8,6 +8,13 @@
 
  */
 
+ let p = document.querySelector(`p`);
+ p.innerHTML = ``
+
+ 
+
+ 
+
  // Array med ord
  const word = [`zombie`, `Vampire`, `candyman`, `frankenstein`]
  // random 
