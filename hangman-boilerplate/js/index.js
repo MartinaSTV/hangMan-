@@ -14,6 +14,7 @@
  // random 
  let random = Math.floor(Math.random)*word.length;
  // spelarens knapp gissning
+ // knapp lyssnare
  //addEventListener. 
  //let playerKey = 
  // spara valet och jämföra
