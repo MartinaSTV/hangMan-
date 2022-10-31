@@ -8,12 +8,21 @@
 
  */
 
+ let p = document.querySelector(`p`);
+ p.innerHTML = ``
+
+ 
+
+ 
+
  // Array med ord
 
  const word = [`zombie`, `Vampire`, `candyman`, `frankenstein`]
  // random 
  let random = Math.floor(Math.random)*word.length;
  // spelarens knapp gissning
+
+ 
  // knapp lyssnare
  //addEventListener. 
  //let playerKey = 
