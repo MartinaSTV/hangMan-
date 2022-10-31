@@ -9,11 +9,13 @@
  */
 
  // Array med ord
-
  const word = [`zombie`, `Vampire`, `candyman`, `frankenstein`]
  // random 
  let random = Math.floor(Math.random)*word.length;
+ //visa tomt ord i webbläsaren i p tagg, 
+
  // spelarens knapp gissning
+
  // knapp lyssnare
  //addEventListener. 
  //let playerKey = 
