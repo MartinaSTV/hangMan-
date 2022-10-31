@@ -23,3 +23,4 @@
  // om den inte finns visa bild 1 osv. 
  // om du gissa rätt ord visa ny sida och spela igen
  // om du blir hängd visa ny sida reload game.  
+// hej hej 
