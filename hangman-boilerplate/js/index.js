@@ -9,9 +9,9 @@
 
  
  
- const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
+ const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
- 
+ let rightGuess = [];
  
 
 
