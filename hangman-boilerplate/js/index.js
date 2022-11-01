@@ -8,31 +8,40 @@
 
  */
 
- let p = document.querySelector(`p`); p.innerHTML = `P`
+ 
  
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
-
- addEventListener('keyup', (event) => {
-
-    console.log(event.key);
-    let keyPressed = event.key
-
-   });
-
+ 
+ let keyPressed = '';
+ 
+ 
 
 
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
-let chosenWord = randomWord.split('');
-console.log(chosenWord)
+let chosenWord = randomWord.split(''); 
 
-for(i =0; i <chosenWord.length; i++){
-    console.log(chosenWord[i])
+
+addEventListener('keyup', (event) => {
+
+    
+  let keyPressed = event.key
+  console.log(keyPressed)
+  for(i =0; i <chosenWord.length; i++){
+    console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
 
     if(chosenWord[i] === keyPressed){
-        console.log(`hej`)
+        console.log(`rätt`)
+        document.getElementById('right-text').innerHTML = `${keyPressed}`
+    }  else {
+      document.getElementById('wrong-text').innerHTML = `${keyPressed}`
     }
+    
 }
+  
+ });
+
+
 
 
 /* var emptyBox;
