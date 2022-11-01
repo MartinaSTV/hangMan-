@@ -8,31 +8,40 @@
 
  */
 
- let p = document.querySelector(`p`);
- p.innerHTML = `P`
-
+ let p = document.querySelector(`p`); p.innerHTML = `P`
  
+ const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
 
- 
+ addEventListener('keyup', (event) => {
+
+    console.log(event.key);
+    let keyPressed = event.key
+
+   });
 
 
 
- // random 
- 
-const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
-
-const randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
+let chosenWord = randomWord.split('');
+console.log(chosenWord)
+
+for(i =0; i <chosenWord.length; i++){
+    console.log(chosenWord[i])
+
+    if(chosenWord[i] === keyPressed){
+        console.log(`hej`)
+    }
+}
 
 
-
-var newCode;
+/* var emptyBox;
 var i;
 newCode= "";
 
 for (i = 0; i <randomWord.length; i++) {
 	
-	newCode += "<span>&nbsp;</span>";
+	emptyBox += "<span>&nbsp;</span>";
 
     console.log(`&nbsp;`)
 }
@@ -41,26 +50,17 @@ p.innerHTML = newCode;
 
 p.getElementsByTagName(`span`)
 
+ */
+// knapp lyssnare
+ 
 
-
-
-
-addEventListener('keyup', (event) => {
-
- if(event.key === `a` , `b`) {
-
-
- console.log(`hejsan`)
-
- }
-
-
-
-
-});
-
-
-
+/**
+ * 1. Splitta ordet till en array med bokstäver
+ * 2. Loopa igenom arrayen och jämför med keyPressed
+ * 
+ * 3. Om bokstav stämmer, visa
+ * 4. OM bokstav inte finns, visa fel
+ */
 
  // Array med ord
  
@@ -82,7 +82,4 @@ addEventListener('keyup', (event) => {
  // om du gissa rätt ord visa ny sida och spela igen
  // om du blir hängd visa ny sida reload game.  
 // hej hej 
-
-
-
 
