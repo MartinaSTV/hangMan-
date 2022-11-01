@@ -8,6 +8,7 @@
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
+ // ändring
  
 
  
