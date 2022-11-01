@@ -6,42 +6,66 @@
  document.querySelector('figure').classList.add('legs')
  bodyEl = document.querySelector(`body`);
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
- let wrongGuesses = []
+ let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
+ let rightGuess = [];
+ 
+
+ 
+
 
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
 let chosenWord = randomWord.split(''); 
+for (i =0; i<chosenWord.length; i++){
+    rightGuess.push('_');
+}
 
 
-bodyEl.addEventListener('keyup', (event) => {
-
-    let keyPressed = event.key
-    let correctGuess = false;
-    console.log(keyPressed)
+addEventListener('keyup', (event) => {
   
-    for(i =0; i <chosenWord.length; i++){
-      console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
+  let keyPressed = event.key
+  let correctGuess = false;
+  console.log(keyPressed)
   
-      if(chosenWord[i] === keyPressed){
-          console.log('rätt')
-          document.getElementById('right-text').innerHTML = `${`-`}`
-          correctGuess = true;
+  for(i =0; i <chosenWord.length; i++){
+    console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
 
-      }
+    if(chosenWord[i] === keyPressed){
+        console.log(`rätt`)
+        correctGuess = true;
+        rightGuess[i] = keyPressed;
+        console.log(rightGuess);
+        document.getElementById('right-text').innerHTML = `${rightGuess}` 
 
-  } if (correctGuess === false) {
-    console.log('Fel gissning');
-    wrongGuesses.push(keyPressed);
-    console.log(wrongGuesses)
-    document.getElementById(`wrong-text`).innerHTML = `${wrongGuesses} är fel bokstav!`
 
-    wrongGuesses
-    [0] = document.getElementById('scaffold').style.opacity = '1'
-
+    }    
+} if (correctGuess === false) {
+  console.log('Fel gissning');
+  wrongGuesses.push(keyPressed);
+  console.log(wrongGuesses)
+  document.getElementById('wrong-text').innerHTML = `${wrongGuesses} är fel bokstav!`
+}
+  if (wrongGuesses.length === 1) {
+    document.getElementById('scaffold').style.opacity = '1'
   }
-  
-   });
+  if (wrongGuesses.length === 2) {
+    document.getElementById('head').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 3) {
+    document.getElementById('body').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 4) {
+    document.getElementById('arms').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 5) {
+    document.getElementById('legs').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 6) {
+    alert('Game over!')
+  }
+
+ });
 
 
 
