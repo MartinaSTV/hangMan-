@@ -26,8 +26,10 @@
  // om du blir hängd visa ny sida reload game.  
 // hej hej 
 
-
 const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
 
 const randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
+let split = randomWord;
+
+
