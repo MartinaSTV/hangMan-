@@ -6,33 +6,41 @@
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
 
- let keyPressed = ``;
+ */
+
  
  
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
+ 
+ let keyPressed = '';
+ 
+ 
 
- addEventListener('keyup', (event) => {
-
-    console.log(event.key);
-    let keyPressed = event.key;
-
-    for(i =0; i <chosenWord.length; i++){
-        console.log(chosenWord[i])
-    
-        if(chosenWord[i] === keyPressed){
-           document.querySelector(`p`); p.innerHTML = `${keyPressed}`
-        }else{
-            
-        }
-    }
-    
-
-   });
 
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
-let chosenWord = randomWord.split('');
-console.log(chosenWord)
+let chosenWord = randomWord.split(''); 
+
+
+addEventListener('keyup', (event) => {
+
+    
+  let keyPressed = event.key
+  console.log(keyPressed)
+  for(i =0; i <chosenWord.length; i++){
+    console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
+
+    if(chosenWord[i] === keyPressed){
+        console.log(`rätt`)
+        document.getElementById('right-text').innerHTML = `${keyPressed}`
+    }  else {
+      document.getElementById('wrong-text').innerHTML = `${keyPressed}`
+    }
+    
+}
+  
+ });
+
 
 
 
