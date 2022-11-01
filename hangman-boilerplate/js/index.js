@@ -6,12 +6,15 @@
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
 
+ /* 1. Göra en array med som fylls med lika många streck som ordet innehåller
+
  */
 
  
  
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
+let signs = [];
  
  
  
@@ -30,11 +33,11 @@ addEventListener('keyup', (event) => {
   
   for(i =0; i <chosenWord.length; i++){
     console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
-
+    
     if(chosenWord[i] === keyPressed){
         console.log(`rätt`)
         correctGuess = true;
-        document.getElementById('right-text').innerHTML = `${keyPressed}`
+        //document.getElementById('right-text').innerHTML = `${keyPressed}`
     }    
 } if (correctGuess === false) {
   console.log('Fel gissning');
