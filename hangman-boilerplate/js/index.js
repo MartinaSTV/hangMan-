@@ -8,12 +8,27 @@
 
  */
 
- // Array med ord
+ let p = document.querySelector(`p`);
+ p.innerHTML = ``
 
  
+
+ 
+
+
+
  // random 
  
+=======
+ // Array med ord
+ const word = [`zombie`, `Vampire`, `candyman`, `frankenstein`]
+ // random 
+ let random = Math.floor(Math.random)*word.length;
+ //visa tomt ord i webbläsaren i p tagg, 
+
+
  // spelarens knapp gissning
+
  // knapp lyssnare
  //addEventListener. 
  //let playerKey = 
@@ -27,7 +42,9 @@
 // hej hej 
 
 
+
 const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
 
 const randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
+
