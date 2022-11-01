@@ -1,25 +1,25 @@
-/**
- För att toggla SVG:en
+
  document.querySelector('figure').classList.add('scaffold')
  document.querySelector('figure').classList.add('head')
  document.querySelector('figure').classList.add('body')
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
-
- */
-
- 
- 
+ bodyEl = document.querySelector(`body`);
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
+ let rightGuess = [];
  
- 
+
  
 
 
+ 
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
 let chosenWord = randomWord.split(''); 
+for (i =0; i<chosenWord.length; i++){
+    rightGuess.push('_');
+}
 
 
 addEventListener('keyup', (event) => {
@@ -34,13 +34,17 @@ addEventListener('keyup', (event) => {
     if(chosenWord[i] === keyPressed){
         console.log(`rätt`)
         correctGuess = true;
-        document.getElementById('right-text').innerHTML = `${keyPressed}`
+        rightGuess[i] = keyPressed;
+        console.log(rightGuess);
+        document.getElementById('right-text').innerHTML = `${rightGuess}` 
+
+
     }    
 } if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
-  document.getElementById('wrong-text').innerHTML = `${wrongGuesses}`
+  document.getElementById('wrong-text').innerHTML = `${wrongGuesses} är fel bokstav!`
 }
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
@@ -113,4 +117,6 @@ p.getElementsByTagName(`span`)
  // om du gissa rätt ord visa ny sida och spela igen
  // om du blir hängd visa ny sida reload game.  
 // hej hej 
+
+
 
