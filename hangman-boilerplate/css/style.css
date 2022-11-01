@@ -1,9 +1,9 @@
 * {
+
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 
 figure svg > * {
     opacity: 0;
@@ -40,3 +40,7 @@ main section {
     justify-content: center;
     align-items: center;
 }
+
+
+
+
