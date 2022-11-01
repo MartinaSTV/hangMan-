@@ -20,7 +20,7 @@
         console.log(chosenWord[i])
     
         if(chosenWord[i] === keyPressed){
-            let p = document.querySelector(`p`); p.innerHTML = `${keyPressed}`
+           document.querySelector(`p`); p.innerHTML = `${keyPressed}`
         }else{
             
         }
