@@ -5,14 +5,10 @@
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
  bodyEl = document.querySelector(`body`);
- const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
+ const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
  
-
- 
-
-
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
@@ -37,7 +33,6 @@ addEventListener('keyup', (event) => {
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
         document.getElementById('right-text').innerHTML = `${rightGuess}` 
-
 
     }    
 } if (correctGuess === false) {
@@ -69,26 +64,6 @@ addEventListener('keyup', (event) => {
 
 
 
-
-/* var emptyBox;
-var i;
-newCode= "";
-
-for (i = 0; i <randomWord.length; i++) {
-	
-	emptyBox += "<span>&nbsp;</span>";
-
-    console.log(`&nbsp;`)
-}
-
-p.innerHTML = newCode;
-
-p.getElementsByTagName(`span`)
-
- */
-// knapp lyssnare
- 
-
 /**
  * 1. Splitta ordet till en array med bokstäver
  * 2. Loopa igenom arrayen och jämför med keyPressed
@@ -102,7 +77,6 @@ p.getElementsByTagName(`span`)
  // random
 
  //visa tomt ord i webbläsaren i p tagg, 
-
 
  // spelarens knapp gissning
 
