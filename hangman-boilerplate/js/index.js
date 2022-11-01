@@ -9,7 +9,7 @@
  */
 
  let p = document.querySelector(`p`);
- p.innerHTML = ``
+ p.innerHTML = `P`
 
  
 
@@ -19,11 +19,53 @@
 
  // random 
  
-=======
+const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
+
+const randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+console.log(randomWord);
+
+
+
+var newCode;
+var i;
+newCode= "";
+
+for (i = 0; i <randomWord.length; i++) {
+	
+	newCode += "<span>&nbsp;</span>";
+
+    console.log(`&nbsp;`)
+}
+
+p.innerHTML = newCode;
+
+p.getElementsByTagName(`span`)
+
+
+
+
+
+addEventListener('keyup', (event) => {
+
+ if(event.key === `a` , `b`) {
+
+
+ console.log(`hejsan`)
+
+ }
+
+
+
+
+});
+
+
+
+
  // Array med ord
- const word = [`zombie`, `Vampire`, `candyman`, `frankenstein`]
- // random 
- let random = Math.floor(Math.random)*word.length;
+ 
+ // random
+
  //visa tomt ord i webbläsaren i p tagg, 
 
 
@@ -43,8 +85,4 @@
 
 
 
-const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
-
-const randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
-console.log(randomWord);
 
