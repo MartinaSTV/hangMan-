@@ -11,8 +11,8 @@
  
  
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
+ let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  
- let keyPressed = '';
  
  
 
@@ -23,22 +23,44 @@ let chosenWord = randomWord.split('');
 
 
 addEventListener('keyup', (event) => {
-
-    
+  
   let keyPressed = event.key
+  let correctGuess = false;
   console.log(keyPressed)
+  
   for(i =0; i <chosenWord.length; i++){
     console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
 
     if(chosenWord[i] === keyPressed){
         console.log(`rätt`)
+        correctGuess = true;
         document.getElementById('right-text').innerHTML = `${keyPressed}`
-    }  else {
-      document.getElementById('wrong-text').innerHTML = `${keyPressed}`
-    }
-    
+    }    
+} if (correctGuess === false) {
+  console.log('Fel gissning');
+  wrongGuesses.push(keyPressed);
+  console.log(wrongGuesses)
+  document.getElementById('wrong-text').innerHTML = `${wrongGuesses}`
 }
-  
+  if (wrongGuesses.length === 1) {
+    document.getElementById('scaffold').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 2) {
+    document.getElementById('head').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 3) {
+    document.getElementById('body').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 4) {
+    document.getElementById('arms').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 5) {
+    document.getElementById('legs').style.opacity = '1'
+  }
+  if (wrongGuesses.length === 6) {
+    alert('Game over!')
+  }
+
  });
 
 
