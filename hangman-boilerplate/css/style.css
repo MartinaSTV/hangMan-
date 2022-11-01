@@ -9,12 +9,12 @@ figure svg > * {
     opacity: 0;
 }
 
-figure svg #ground             { opacity: 1; }
-figure.scaffold svg #scaffold  { opacity: 1; }
-figure.head     svg #head      { opacity: 1; }
-figure.body     svg #body      { opacity: 1; }
-figure.arms     svg #arms      { opacity: 1; }
-figure.legs     svg #legs      { opacity: 1; }
+figure svg #ground             { opacity: 0; }
+figure.scaffold svg #scaffold  { opacity: 0; }
+figure.head     svg #head      { opacity: 0; }
+figure.body     svg #body      { opacity: 0; }
+figure.arms     svg #arms      { opacity: 0; }
+figure.legs     svg #legs      { opacity: 0; }
 
 body {
     height: 100vh;
@@ -41,7 +41,6 @@ main section {
     align-items: center;
     flex-direction: column;
 }
-
 
 
 
