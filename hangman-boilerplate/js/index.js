@@ -1,38 +1,39 @@
-/**
- För att toggla SVG:en
+
+
  document.querySelector('figure').classList.add('scaffold')
  document.querySelector('figure').classList.add('head')
  document.querySelector('figure').classList.add('body')
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
 
- */
-
- let p = document.querySelector(`p`); p.innerHTML = `P`
+ let keyPressed = ``;
+ 
  
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
 
  addEventListener('keyup', (event) => {
 
     console.log(event.key);
-    let keyPressed = event.key
+    let keyPressed = event.key;
+
+    for(i =0; i <chosenWord.length; i++){
+        console.log(chosenWord[i])
+    
+        if(chosenWord[i] === keyPressed){
+            let p = document.querySelector(`p`); p.innerHTML = `${keyPressed}`
+        }else{
+            
+        }
+    }
+    
 
    });
-
-
 
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
 let chosenWord = randomWord.split('');
 console.log(chosenWord)
 
-for(i =0; i <chosenWord.length; i++){
-    console.log(chosenWord[i])
-
-    if(chosenWord[i] === keyPressed){
-        console.log(`hej`)
-    }
-}
 
 
 /* var emptyBox;
