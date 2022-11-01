@@ -15,11 +15,17 @@
 
  
 
+
+
+ // random 
+ 
+=======
  // Array med ord
  const word = [`zombie`, `Vampire`, `candyman`, `frankenstein`]
  // random 
  let random = Math.floor(Math.random)*word.length;
  //visa tomt ord i webbläsaren i p tagg, 
+
 
  // spelarens knapp gissning
 
@@ -34,3 +40,11 @@
  // om du gissa rätt ord visa ny sida och spela igen
  // om du blir hängd visa ny sida reload game.  
 // hej hej 
+
+
+
+const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
+
+const randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+console.log(randomWord);
+
