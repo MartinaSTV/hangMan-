@@ -4,14 +4,13 @@
  document.querySelector('figure').classList.add('body')
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
-
- 
-
- 
- 
- const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein'];
+ bodyEl = document.querySelector(`body`);
+ const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
+ // ändring
+ 
+
  
 
 
