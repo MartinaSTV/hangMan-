@@ -1,5 +1,4 @@
 
-
  document.querySelector('figure').classList.add('scaffold')
  document.querySelector('figure').classList.add('head')
  document.querySelector('figure').classList.add('body')
@@ -7,38 +6,42 @@
  document.querySelector('figure').classList.add('legs')
  bodyEl = document.querySelector(`body`);
  const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
- let WrongGuess = []
+ let wrongGuesses = []
 
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
 let chosenWord = randomWord.split(''); 
 
+
 bodyEl.addEventListener('keyup', (event) => {
-  let keyPressed = event.key
-  console.log(keyPressed)
-  let correctGuess = false
 
-  for(let i =0; i <chosenWord.length; i++){
-    console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
-    
-    if(chosenWord[i] === keyPressed){
-        console.log(`rätt`)
-        document.querySelector('#right-text').innerHTML = `${keyPressed}`
-        correctGuess: true;
-    }
-  }
-  if(correctGuess === false){
-        
-         WrongGuess.push(keyPressed)
-         console.log(WrongGuess)
-         document.querySelector('#wrong-text').innerHTML = `${WrongGuess} är fel bokstav försök igen!`
-
+    let keyPressed = event.key
+    let correctGuess = false;
+    console.log(keyPressed)
+  
+    for(i =0; i <chosenWord.length; i++){
+      console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
+  
+      if(chosenWord[i] === keyPressed){
+          console.log('rätt')
+          document.getElementById('right-text').innerHTML = `${`-`}`
+          correctGuess = true;
 
       }
-    
 
- });
+  } if (correctGuess === false) {
+    console.log('Fel gissning');
+    wrongGuesses.push(keyPressed);
+    console.log(wrongGuesses)
+    document.getElementById(`wrong-text`).innerHTML = `${wrongGuesses} är fel bokstav!`
+
+    wrongGuesses
+    [0] = document.getElementById('scaffold').style.opacity = '1'
+
+  }
+  
+   });
 
 
 
