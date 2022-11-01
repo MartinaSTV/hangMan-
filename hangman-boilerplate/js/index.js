@@ -8,22 +8,14 @@
 
  */
 
- let p = document.querySelector(`p`);
- p.innerHTML = ``
-
- 
-
- 
-
-
+/*  let p = document.querySelector(`p`);
+ p.innerHTML = `` */
 
  // random 
  
-=======
+
  // Array med ord
- const word = [`zombie`, `Vampire`, `candyman`, `frankenstein`]
- // random 
- let random = Math.floor(Math.random)*word.length;
+
  //visa tomt ord i webbläsaren i p tagg, 
 
 
@@ -48,3 +40,17 @@ const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
 const randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
 
+let letter = document.querySelector(`p`)
+letter.innerText = `${randomWord}`
+
+
+
+document.querySelector('p').addEventListener('keyup', (e) =>{
+    if(e.key === 'Enter'){
+        const letter = e.target.value; // Värdet av inputfältet vi klickade enter i
+        console.log(letter)
+       
+        }
+        e.target.value = '';
+    
+})

@@ -6,22 +6,6 @@
 }
 
 
-
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-
-}
-
-body {
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    }
-main
-
 figure svg > * {
     opacity: 0;
 }
@@ -57,14 +41,7 @@ main section {
     justify-content: center;
     align-items: center;
 }
-
-
-
-p {
-
-border-bottom: 2px solid black;
-max-width: 2rem;
-
+p{
+    
 }
-
 
