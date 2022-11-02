@@ -13,7 +13,7 @@ document.querySelector('figure').classList.add('scaffold')
  console.log(alfabet);
 
 
- let  playAgain = document.querySelector(`.reloadbutton`)
+ 
  let  playAgainModal = document.querySelector(`.modal`)
  
 
