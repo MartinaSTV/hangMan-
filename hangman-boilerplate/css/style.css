@@ -18,7 +18,7 @@ figure.legs     svg #legs      { opacity: 0; }
 
 body {
     height: 100vh;
-    
+    background-color: darkgray;
 }
 
 header {
@@ -42,5 +42,10 @@ main section {
     flex-direction: column;
 }
 
+#right-text {
+    font-size: 3rem;
+    
+    
+}
 
 

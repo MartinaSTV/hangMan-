@@ -1,14 +1,14 @@
-
- document.querySelector('figure').classList.add('scaffold')
+document.querySelector('figure').classList.add('scaffold')
  document.querySelector('figure').classList.add('head')
  document.querySelector('figure').classList.add('body')
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
  bodyEl = document.querySelector(`body`);
- const gameWords = ['zombie', 'Vampire', 'candyman', 'frankenstein'];
+ const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
- // ändring
+ 
+ 
  
 
  
@@ -20,9 +20,10 @@ console.log(randomWord);
 let chosenWord = randomWord.split(''); 
 for (i =0; i<chosenWord.length; i++){
     rightGuess.push('_');
+    console.log(rightGuess.join(''));
 }
 
-
+document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}` // funkar men kanske ska flyttas 
 addEventListener('keyup', (event) => {
   
   let keyPressed = event.key
@@ -31,17 +32,21 @@ addEventListener('keyup', (event) => {
   
   for(i =0; i <chosenWord.length; i++){
     console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
-    
+
     if(chosenWord[i] === keyPressed){
         console.log(`rätt`)
         correctGuess = true;
-        document.getElementById('right-text').innerHTML = `${keyPressed}`
+        rightGuess[i] = keyPressed;
+        console.log(rightGuess);
+        document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}` 
+        
+
     }    
 } if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
-  document.getElementById('wrong-text').innerHTML = `${wrongGuesses} är fel bokstav!`
+  document.getElementById('wrong-text').innerHTML ='Wrong letters!' + '<br/>' + `${wrongGuesses}`
 }
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
@@ -70,18 +75,13 @@ addEventListener('keyup', (event) => {
 /* var emptyBox;
 var i;
 newCode= "";
-
 for (i = 0; i <randomWord.length; i++) {
 	
 	emptyBox += "<span>&nbsp;</span>";
-
     console.log(`&nbsp;`)
 }
-
 p.innerHTML = newCode;
-
 p.getElementsByTagName(`span`)
-
  */
 // knapp lyssnare
  
