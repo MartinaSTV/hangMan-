@@ -7,9 +7,9 @@
  const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
-
+ const bodyklick = document.querySelector(`body`)
  let  playAgain = document.querySelector(`.reloadbutton`)
-
+ let usedLetters = [] //använda bokstäver 
 
  
  
@@ -21,7 +21,7 @@ for (i =0; i<chosenWord.length; i++){
 }
 
 document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
-addEventListener('keyup', (event) => {
+bodyklick.addEventListener('keyup', (event) => {
   
   let keyPressed = event.key
   let correctGuess = false;
@@ -37,13 +37,17 @@ addEventListener('keyup', (event) => {
         console.log(rightGuess);
         document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 
+       
+  }
 
-    }    
+  
+
 } if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
   document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
+
 }
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
@@ -61,9 +65,9 @@ addEventListener('keyup', (event) => {
     document.getElementById('legs').style.opacity = '1'
   }
   if (wrongGuesses.length === 6) {
-
+   
     playAgain.style.visibility = `visible`
-
+    document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
   }
 
  });
