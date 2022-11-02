@@ -4,11 +4,13 @@
  document.querySelector('figure').classList.add('body')
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
- bodyEl = document.querySelector(`body`);
  const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
- // ändring
+
+ let  playAgain = document.querySelector(`.reloadbutton`)
+
+
  
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
@@ -58,11 +60,17 @@ addEventListener('keyup', (event) => {
     document.getElementById('legs').style.opacity = '1'
   }
   if (wrongGuesses.length === 6) {
-    alert('Game over!')
+
+    
+    playAgain.style.visibility = `visible`
+
   }
 
  });
 
+playAgain.addEventListener(`click`, ()=>{
+    location.reload();
+})
 
 
 /**
