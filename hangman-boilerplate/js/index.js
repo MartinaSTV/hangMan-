@@ -3,17 +3,14 @@ document.querySelector('figure').classList.add('scaffold')
  document.querySelector('figure').classList.add('body')
  document.querySelector('figure').classList.add('arms')
  document.querySelector('figure').classList.add('legs')
- bodyEl = document.querySelector(`body`);
- const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein'];
+ const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
- 
- 
- 
 
- 
+ let  playAgain = document.querySelector(`.reloadbutton`)
 
 
+ 
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
@@ -23,7 +20,7 @@ for (i =0; i<chosenWord.length; i++){
     console.log(rightGuess.join(''));
 }
 
-document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}` // funkar men kanske ska flyttas 
+document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 addEventListener('keyup', (event) => {
   
   let keyPressed = event.key
@@ -38,15 +35,15 @@ addEventListener('keyup', (event) => {
         correctGuess = true;
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
-        document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}` 
-        
+        document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
+
 
     }    
 } if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
-  document.getElementById('wrong-text').innerHTML ='Wrong letters!' + '<br/>' + `${wrongGuesses}`
+  document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
 }
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
@@ -64,27 +61,17 @@ addEventListener('keyup', (event) => {
     document.getElementById('legs').style.opacity = '1'
   }
   if (wrongGuesses.length === 6) {
-    alert('Game over!')
+
+    playAgain.style.visibility = `visible`
+
   }
 
  });
 
+playAgain.addEventListener(`click`, ()=>{
+    location.reload();
+})
 
-
-
-/* var emptyBox;
-var i;
-newCode= "";
-for (i = 0; i <randomWord.length; i++) {
-	
-	emptyBox += "<span>&nbsp;</span>";
-    console.log(`&nbsp;`)
-}
-p.innerHTML = newCode;
-p.getElementsByTagName(`span`)
- */
-// knapp lyssnare
- 
 
 /**
  * 1. Splitta ordet till en array med bokstäver
@@ -99,7 +86,6 @@ p.getElementsByTagName(`span`)
  // random
 
  //visa tomt ord i webbläsaren i p tagg, 
-
 
  // spelarens knapp gissning
 

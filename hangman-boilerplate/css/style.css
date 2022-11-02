@@ -46,6 +46,8 @@ main section {
     font-size: 3rem;
     
     
+.reloadbutton{
+    visibility:hidden ;
 }
 
 
