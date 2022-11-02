@@ -7,7 +7,10 @@
  const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
+
  let  playAgain = document.querySelector(`.reloadbutton`)
+
+
  
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
