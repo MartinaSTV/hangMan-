@@ -23,10 +23,17 @@ for (i =0; i<chosenWord.length; i++){
 }
 
 
+     
 
-document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}` 
-addEventListener('keypress', (event) => {
 
+
+
+
+
+
+document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
+addEventListener('keyup', (event) => {
+  
 
   let keyPressed = event.key
   let correctGuess = false;
@@ -41,7 +48,11 @@ addEventListener('keypress', (event) => {
         correctGuess = true;
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
-        document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}` 
+
+        document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
+
+
+
     }    
 
 } 
@@ -50,7 +61,11 @@ if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
-  document.getElementById('wrong-text').innerHTML = `Fel bokstäver: ${wrongGuesses.join(' ')} `}
+
+
+
+  document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
+}
 
 
   
