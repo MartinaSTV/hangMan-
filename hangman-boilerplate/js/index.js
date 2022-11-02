@@ -70,8 +70,6 @@ playAgain.addEventListener(`click`, ()=>{
 })
 
 
-
-
 /**
  * 1. Splitta ordet till en array med bokstäver
  * 2. Loopa igenom arrayen och jämför med keyPressed
