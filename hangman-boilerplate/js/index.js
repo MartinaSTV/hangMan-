@@ -6,11 +6,19 @@ document.querySelector('figure').classList.add('scaffold')
  const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
- let alfabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+
  let playAgain = document.querySelector(`.reloadbutton`)
  let rightLetter = []; // NY
  
  console.log(alfabet);
+
+
+ let  playAgain = document.querySelector(`.reloadbutton`)
+ let  playAgainModal = document.querySelector(`.modal`)
+ 
+
+
+
 
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; 
@@ -21,12 +29,23 @@ for (i =0; i<chosenWord.length; i++){
     console.log(rightGuess.join(''));
 }
 
+
+     
+
+
+
+
+
+
+
 document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 addEventListener('keyup', (event) => {
   
+
   let keyPressed = event.key
   let correctGuess = false;
   console.log(keyPressed)
+
   
   for(i =0; i <chosenWord.length; i++){
     console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
@@ -37,21 +56,30 @@ addEventListener('keyup', (event) => {
         rightLetter.push(chosenWord[i]); // NY
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
+
         document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
+
         
        }    
        if (rightLetter.length === randomWord.length){ 
         document.getElementById('right-text').innerHTML = `Du vann!`
         playAgain.style.visibility = `visible`
       }
+
 } 
 
 if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
+
+
+
   document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
 }
+
+
+  
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
   }
@@ -66,11 +94,16 @@ if (correctGuess === false) {
   }
   if (wrongGuesses.length === 5) {
     document.getElementById('legs').style.opacity = '1'
+   
   }
   if (wrongGuesses.length === 6) {
    
     playAgain.style.visibility = `visible`
-    document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
+
+    playAgainModal.style.display = "block";
+    document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
+   // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
+
 
   } 
   
