@@ -42,5 +42,5 @@ main section {
     flex-direction: column;
 }
 .reloadbutton{
-    visibility:hidden ;
+    visibility: hidden ;
 }
