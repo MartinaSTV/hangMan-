@@ -6,11 +6,10 @@ document.querySelector('figure').classList.add('scaffold')
  const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
-
  let playAgain = document.querySelector(`.reloadbutton`)
  let rightLetter = []; // NY
  
- console.log(alfabet);
+ 
 
 
  
