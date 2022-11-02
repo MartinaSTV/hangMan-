@@ -8,13 +8,10 @@ document.querySelector('figure').classList.add('scaffold')
  let rightGuess = [];
 
  let playAgain = document.querySelector(`.reloadbutton`)
+ let  playAgainModal = document.querySelector(`.modal`)
  let rightLetter = []; // NY
  
- console.log(alfabet);
 
-
- let  playAgain = document.querySelector(`.reloadbutton`)
- let  playAgainModal = document.querySelector(`.modal`)
  
 
 
@@ -31,12 +28,6 @@ for (i =0; i<chosenWord.length; i++){
 
 
      
-
-
-
-
-
-
 
 document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 addEventListener('keyup', (event) => {
@@ -62,8 +53,12 @@ addEventListener('keyup', (event) => {
         
        }    
        if (rightLetter.length === randomWord.length){ 
+        document.getElementsByClassName(`result`).innerHTML = `Du vann`
         document.getElementById('right-text').innerHTML = `Du vann!`
+        playAgainModal.style.display = "block";
         playAgain.style.visibility = `visible`
+        document.querySelector(`.result`).innerHTML = `Du vann!!!!`
+      
       }
 
 } 
@@ -79,7 +74,6 @@ if (correctGuess === false) {
 }
 
 
-  
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
   }
@@ -101,7 +95,8 @@ if (correctGuess === false) {
     playAgain.style.visibility = `visible`
 
     playAgainModal.style.display = "block";
-    document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
+    // document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
+    document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${chosenWord.join('')}`
    // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
 
 
