@@ -7,10 +7,10 @@
  const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
- const bodyklick = document.querySelector(`body`)
- let  playAgain = document.querySelector(`.reloadbutton`)
- let usedLetters = [] //använda bokstäver 
+ let rightLetter = [];
 
+ let  playAgain = document.querySelector(`.reloadbutton`)
+ 
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
 let chosenWord = randomWord.split(''); 
@@ -19,14 +19,15 @@ for (i =0; i<chosenWord.length; i++){
 }
 
 
+
+
 document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
-bodyklick.addEventListener('keyup', (event) => {
+addEventListener('keyup', (event) => {
   
 
   let keyPressed = event.key
   let correctGuess = false;
   console.log(keyPressed)
-
   
   for(i =0; i <chosenWord.length; i++){
     console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
@@ -36,20 +37,32 @@ bodyklick.addEventListener('keyup', (event) => {
         correctGuess = true;
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
-
+        rightLetter.push(chosenWord[i]); // NY
         document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
+        
+
+    }
+
+    /* for(i = 0; i < rightLetter.length; i++){
+      for(j = 0; j < rightGuess.length; j++){
+          if(rightLetter[i] === rightGuess.length[j]){
+            alert(`yes`) // success
+      } */
+  }
+    if (rightLetter.length === rightGuess.length){ 
+      alert('Du vann')  
+    }
+   
+   
 
 
-    }    
-} if (correctGuess === false) {
+} if(correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
 
 
-
   document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
-
 }
 
   if (wrongGuesses.length === 1) {
@@ -69,17 +82,22 @@ bodyklick.addEventListener('keyup', (event) => {
    
   }
   if (wrongGuesses.length === 6) {
-   
+
     playAgain.style.visibility = `visible`
+   
+    document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
 
   }
-
 
  });
 
 playAgain.addEventListener(`click`, ()=>{
     location.reload();
 })
+
+
+
+
 
 
 
@@ -110,6 +128,3 @@ playAgain.addEventListener(`click`, ()=>{
  // om du gissa rätt ord visa ny sida och spela igen
  // om du blir hängd visa ny sida reload game.  
 // hej hej 
-
-
-
