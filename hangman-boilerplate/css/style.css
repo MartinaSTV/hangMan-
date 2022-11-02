@@ -18,7 +18,7 @@ figure.legs     svg #legs      { opacity: 0; }
 
 body {
     height: 100vh;
-    background-color: darkgray;
+    background-color: grey;
 }
 
 header {
@@ -139,5 +139,9 @@ main section {
     cursor: pointer;
   }
   
-  
+  .result {
+
+color: orange;
+
+  }
 
