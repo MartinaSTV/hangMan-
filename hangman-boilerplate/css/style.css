@@ -18,7 +18,7 @@ figure.legs     svg #legs      { opacity: 0; }
 
 body {
     height: 100vh;
-    
+    background-color: darkgray;
 }
 
 header {
@@ -41,6 +41,7 @@ main section {
     align-items: center;
     flex-direction: column;
 }
+
 
 .reloadbutton{
     visibility:hidden ;
@@ -97,6 +98,7 @@ main section {
    align-items: center;
    background-color: black;
    
+
 }
 
 .modal-body h2 {
