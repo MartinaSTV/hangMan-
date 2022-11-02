@@ -9,7 +9,7 @@ figure svg > * {
     opacity: 0;
 }
 
-figure svg #ground             { opacity: 0; }
+figure svg #ground             { opacity: 1; }
 figure.scaffold svg #scaffold  { opacity: 0; }
 figure.head     svg #head      { opacity: 0; }
 figure.body     svg #body      { opacity: 0; }
