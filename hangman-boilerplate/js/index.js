@@ -82,8 +82,6 @@ if (correctGuess === false) {
     playAgainModal.style.display = "block";
     document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
    // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
-
-
   } 
   
  });
