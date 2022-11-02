@@ -1,5 +1,4 @@
-
- document.querySelector('figure').classList.add('scaffold')
+document.querySelector('figure').classList.add('scaffold')
  document.querySelector('figure').classList.add('head')
  document.querySelector('figure').classList.add('body')
  document.querySelector('figure').classList.add('arms')
@@ -8,18 +7,26 @@
  let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
  let rightGuess = [];
 
+ let playAgain = document.querySelector(`.reloadbutton`)
+ let rightLetter = []; // NY
+ 
+ console.log(alfabet);
+
+
  let  playAgain = document.querySelector(`.reloadbutton`)
  let  playAgainModal = document.querySelector(`.modal`)
  
 
 
 
+
  
-let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; 
 console.log(randomWord);
-let chosenWord = randomWord.split(''); 
+let chosenWord = randomWord.split(''); // Splittar 
 for (i =0; i<chosenWord.length; i++){
     rightGuess.push('_');
+    console.log(rightGuess.join(''));
 }
 
 
@@ -46,14 +53,18 @@ addEventListener('keyup', (event) => {
     if(chosenWord[i] === keyPressed){
         console.log(`rätt`)
         correctGuess = true;
+        rightLetter.push(chosenWord[i]); // NY
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
 
         document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 
-
-
-    }    
+        
+       }    
+       if (rightLetter.length === randomWord.length){ 
+        document.getElementById('right-text').innerHTML = `Du vann!`
+        playAgain.style.visibility = `visible`
+      }
 
 } 
 
@@ -86,22 +97,21 @@ if (correctGuess === false) {
    
   }
   if (wrongGuesses.length === 6) {
-
+   
     playAgain.style.visibility = `visible`
+
     playAgainModal.style.display = "block";
     document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
    // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
 
-  }
 
+  } 
+  
  });
 
 playAgain.addEventListener(`click`, ()=>{
     location.reload();
 })
-
-
-
 
 
 
