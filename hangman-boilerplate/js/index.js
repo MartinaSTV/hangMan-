@@ -11,8 +11,6 @@
  let  playAgain = document.querySelector(`.reloadbutton`)
  let usedLetters = [] //använda bokstäver 
 
-
- 
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
 let chosenWord = randomWord.split(''); 
@@ -82,10 +80,6 @@ bodyklick.addEventListener('keyup', (event) => {
 playAgain.addEventListener(`click`, ()=>{
     location.reload();
 })
-
-
-
-
 
 
 
