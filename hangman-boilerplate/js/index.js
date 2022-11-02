@@ -11,7 +11,7 @@
  let  playAgain = document.querySelector(`.reloadbutton`)
  let usedLetters = [] //använda bokstäver 
 
- 
+
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
@@ -20,12 +20,27 @@ for (i =0; i<chosenWord.length; i++){
     rightGuess.push('_');
 }
 
+
+     
+
+
+
+
+
+
+
 document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 bodyklick.addEventListener('keyup', (event) => {
   
+
   let keyPressed = event.key
   let correctGuess = false;
   console.log(keyPressed)
+
+
+
+
+
   
   for(i =0; i <chosenWord.length; i++){
     console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
@@ -35,20 +50,22 @@ bodyklick.addEventListener('keyup', (event) => {
         correctGuess = true;
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
+
         document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 
-       
-  }
 
-  
-
+    }    
 } if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
+
+
+
   document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
 
 }
+
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
   }
@@ -63,18 +80,27 @@ bodyklick.addEventListener('keyup', (event) => {
   }
   if (wrongGuesses.length === 5) {
     document.getElementById('legs').style.opacity = '1'
+   
   }
   if (wrongGuesses.length === 6) {
    
     playAgain.style.visibility = `visible`
-    document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
+
   }
+
+
+
 
  });
 
 playAgain.addEventListener(`click`, ()=>{
     location.reload();
 })
+
+
+
+
+
 
 
 /**
