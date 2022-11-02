@@ -17,7 +17,7 @@ for (i =0; i<chosenWord.length; i++){
     rightGuess.push('_');
 }
 
-
+document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 addEventListener('keyup', (event) => {
   
   let keyPressed = event.key
@@ -32,14 +32,15 @@ addEventListener('keyup', (event) => {
         correctGuess = true;
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
-        document.getElementById('right-text').innerHTML = `${rightGuess}` 
+        document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
+
 
     }    
 } if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
-  document.getElementById('wrong-text').innerHTML = `${wrongGuesses} är fel bokstav!`
+  document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
 }
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
@@ -58,7 +59,6 @@ addEventListener('keyup', (event) => {
   }
   if (wrongGuesses.length === 6) {
 
-    
     playAgain.style.visibility = `visible`
 
   }
