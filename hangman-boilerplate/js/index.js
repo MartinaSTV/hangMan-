@@ -9,6 +9,8 @@
  let rightGuess = [];
 
  let  playAgain = document.querySelector(`.reloadbutton`)
+ let  playAgainModal = document.querySelector(`.modal`)
+ 
 
 
 
@@ -37,10 +39,6 @@ addEventListener('keyup', (event) => {
   let correctGuess = false;
   console.log(keyPressed)
 
-
-
-
-
   
   for(i =0; i <chosenWord.length; i++){
     console.log(chosenWord[i]) // skriver ut varje bokstav i ordet 
@@ -57,11 +55,9 @@ addEventListener('keyup', (event) => {
 
     }    
 
+} 
 
-   
-
-
-} if (correctGuess === false) {
+if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
@@ -71,6 +67,8 @@ addEventListener('keyup', (event) => {
   document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
 }
 
+
+  
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
   }
@@ -90,15 +88,11 @@ addEventListener('keyup', (event) => {
   if (wrongGuesses.length === 6) {
 
     playAgain.style.visibility = `visible`
-   
-    document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
-  
-   
+    playAgainModal.style.display = "block";
+    document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
+   // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
 
   }
-
-
-
 
  });
 
