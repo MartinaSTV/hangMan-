@@ -45,9 +45,9 @@ main section {
 #right-text {
     font-size: 3rem;
     
-    
-.reloadbutton{
-    visibility:hidden ;
+ } 
+.reloadbutton {
+    visibility:hidden;
 }
 
 
