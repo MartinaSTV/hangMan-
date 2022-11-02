@@ -10,6 +10,8 @@
  let rightLetter = [];
 
  let  playAgain = document.querySelector(`.reloadbutton`)
+ let  playAgainModal = document.querySelector(`.modal`)
+ 
  
 let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 console.log(randomWord);
@@ -17,9 +19,6 @@ let chosenWord = randomWord.split('');
 for (i =0; i<chosenWord.length; i++){
     rightGuess.push('_');
 }
-
-
-
 
 document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 addEventListener('keyup', (event) => {
@@ -39,24 +38,15 @@ addEventListener('keyup', (event) => {
         console.log(rightGuess);
         rightLetter.push(chosenWord[i]); // NY
         document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
-        
 
     }
 
-    /* for(i = 0; i < rightLetter.length; i++){
-      for(j = 0; j < rightGuess.length; j++){
-          if(rightLetter[i] === rightGuess.length[j]){
-            alert(`yes`) // success
-      } */
-  }
-    if (rightLetter.length === rightGuess.length){ 
-      alert('Du vann')  
-    }
-   
-   
 
+    }    
 
-} if(correctGuess === false) {
+} 
+
+if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
@@ -65,6 +55,8 @@ addEventListener('keyup', (event) => {
   document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
 }
 
+
+  
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
   }
@@ -84,8 +76,9 @@ addEventListener('keyup', (event) => {
   if (wrongGuesses.length === 6) {
 
     playAgain.style.visibility = `visible`
-   
-    document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
+    playAgainModal.style.display = "block";
+    document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
+   // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
 
   }
 
