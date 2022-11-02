@@ -9,6 +9,8 @@
  let rightGuess = [];
 
  let  playAgain = document.querySelector(`.reloadbutton`)
+ let  playAgainModal = document.querySelector(`.modal`)
+ 
 
 
 
@@ -25,20 +27,10 @@ for (i =0; i<chosenWord.length; i++){
 document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}` 
 addEventListener('keypress', (event) => {
 
-     
-
-
-
-
-
 
   let keyPressed = event.key
   let correctGuess = false;
   console.log(keyPressed)
-
-
-
-
 
   
   for(i =0; i <chosenWord.length; i++){
@@ -50,19 +42,18 @@ addEventListener('keypress', (event) => {
         rightGuess[i] = keyPressed;
         console.log(rightGuess);
         document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}` 
-      
     }    
 
+} 
 
-   
-
-
-} if (correctGuess === false) {
+if (correctGuess === false) {
   console.log('Fel gissning');
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
-  document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav!`}
+  document.getElementById('wrong-text').innerHTML = `Fel bokstäver: ${wrongGuesses.join(' ')} `}
 
+
+  
   if (wrongGuesses.length === 1) {
     document.getElementById('scaffold').style.opacity = '1'
   }
@@ -81,17 +72,12 @@ addEventListener('keypress', (event) => {
   }
   if (wrongGuesses.length === 6) {
 
-    
     playAgain.style.visibility = `visible`
-   
-    document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
-  
-   
+    playAgainModal.style.display = "block";
+    document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
+   // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
 
   }
-
-
-
 
  });
 
