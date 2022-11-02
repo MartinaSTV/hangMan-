@@ -21,14 +21,6 @@ for (i =0; i<chosenWord.length; i++){
 }
 
 
-     
-
-
-
-
-
-
-
 document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
 bodyklick.addEventListener('keyup', (event) => {
   
@@ -36,10 +28,6 @@ bodyklick.addEventListener('keyup', (event) => {
   let keyPressed = event.key
   let correctGuess = false;
   console.log(keyPressed)
-
-
-
-
 
   
   for(i =0; i <chosenWord.length; i++){
@@ -87,8 +75,6 @@ bodyklick.addEventListener('keyup', (event) => {
     playAgain.style.visibility = `visible`
 
   }
-
-
 
 
  });
