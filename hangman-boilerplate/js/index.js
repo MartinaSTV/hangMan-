@@ -7,11 +7,9 @@ const modal = document.getElementById("myModal");
 const gameWords = ['zombie', 'vampyr', 'candyman', 'frankenstein','spöke','djävulen','häxa','trollkarl', 'mumie','fågelskrämma'];
 let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
 let rightGuess = [];
-let rightLetter = []; // NY
+let rightLetter = []; // tangna bokstäver i ny array
 let playAgain = document.querySelector(`.reloadbutton`)
 let  playAgainModal = document.querySelector(`.modal`)
-
-
 
 const timer = document.getElementById('timer');
 let timerInterval;
@@ -40,17 +38,6 @@ timerInterval = setInterval(function () {
   }, 1000);
 }
 
-
-
-
-
-
-
-
-
-
-
-
 start = document.querySelector(`.startGame`)
   start.addEventListener(`click`, ()=>{
     onclick= startTinmer();
@@ -63,14 +50,13 @@ function gameStart(){
 
   let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; 
   console.log(randomWord);
-  let chosenWord = randomWord.split(''); // Splittar 
+  let chosenWord = randomWord.split(''); // Splittar, plockar isär randomword.
   for (i =0; i<chosenWord.length; i++){
       rightGuess.push('_');
       
   }
   
   document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
-  
   
   addEventListener('keypress', (event) => {
   
@@ -87,7 +73,7 @@ function gameStart(){
       if(chosenWord[i] === keyPressed){
           console.log(`rätt`)
           correctGuess = true;
-          rightLetter.push(chosenWord[i]); // NY
+          rightLetter.push(chosenWord[i]);
           rightGuess[i] = keyPressed;
           console.log(rightGuess);
   
@@ -131,21 +117,15 @@ function gameStart(){
     if (wrongGuesses.length === 6) {
      
       playAgain.style.visibility = `visible`
-  
+
       playAgainModal.style.display = "block";
       document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${chosenWord.join('')}`
-     // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
      clearInterval(timerInterval)
-  
 
     } 
-
     
    });
-
 }
-
-
 
  // kunna kryssa ner popup fönstret med krysset
  let close = document.getElementsByClassName("close")[0];
@@ -187,7 +167,3 @@ playAgain.addEventListener(`click`, ()=>{
  // om du blir hängd visa ny sida reload game.  
 // hej hej 
 
-
-
-// Att göra
-// 1. 
