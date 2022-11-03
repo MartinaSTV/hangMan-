@@ -3,6 +3,7 @@ document.querySelector('figure').classList.add('head')
 document.querySelector('figure').classList.add('body')
 document.querySelector('figure').classList.add('arms')
 document.querySelector('figure').classList.add('legs')
+const modal = document.getElementById("myModal");
 const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
 let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
 let rightGuess = [];
@@ -91,6 +92,12 @@ if (correctGuess === false) {
   
  });
 
+
+ // kunna kryssa ner popup fönstret med krysset
+ let close = document.getElementsByClassName("close")[0];
+ close.onclick = function() {
+  modal.style.display = "none";
+}
 playAgain.addEventListener(`click`, ()=>{
     location.reload();
 })
