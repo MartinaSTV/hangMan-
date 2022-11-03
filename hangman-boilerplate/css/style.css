@@ -26,6 +26,12 @@ header {
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.startGame{
+    visibility: visible;
+    padding: 10px;
+    margin: 10px;
 }
 
 main {
@@ -114,7 +120,7 @@ main section {
   }
   
 
-
+/* 
 .modal-footer {
     margin-top: 10rem;
     
@@ -127,7 +133,7 @@ main section {
     font-size: 2rem;
   }
   
- 
+  */
 
   .close {
     color: black;
