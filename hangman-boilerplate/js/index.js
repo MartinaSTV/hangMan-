@@ -91,7 +91,6 @@ function gameStart(){
       playAgain.style.visibility = `visible`
   
       playAgainModal.style.display = "block";
-      // document.getElementById('right-word').innerHTML = `Ordet var: ${chosenWord.join('')}`
       document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${chosenWord.join('')}`
      // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
   
@@ -113,7 +112,7 @@ playAgain.addEventListener(`click`, ()=>{
     location.reload();
 })
 
-
+//NY
 
 
 /**
