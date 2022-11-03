@@ -137,7 +137,7 @@ function gameStart(){
      // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
      clearInterval(timerInterval)
   
-  
+
     } 
 
     
