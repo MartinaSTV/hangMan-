@@ -4,7 +4,7 @@ document.querySelector('figure').classList.add('body')
 document.querySelector('figure').classList.add('arms')
 document.querySelector('figure').classList.add('legs')
 const modal = document.getElementById("myModal");
-const gameWords = ['zombie', 'vampire', 'candyman', 'frankenstein','ghost','devil','whitch','sorcerer', 'mumie','scarecrow'];
+const gameWords = ['zombie', 'vampyr', 'candyman', 'frankenstein','spöke','djävulen','häxa','trollkarl', 'mumie','fågelskrämma'];
 let wrongGuesses = []; // Här ska vi lägga i fel-gissade bokstäver
 let rightGuess = [];
 let rightLetter = []; // NY
@@ -12,7 +12,7 @@ let playAgain = document.querySelector(`.reloadbutton`)
 let  playAgainModal = document.querySelector(`.modal`)
 
 start = document.querySelector(`.startGame`)
-  addEventListener(`click`, ()=>{
+  start.addEventListener(`click`, ()=>{
     start.style.visibility = `hidden`
     gameStart()
   
@@ -68,7 +68,7 @@ function gameStart(){
     console.log('Fel gissning');
     wrongGuesses.push(keyPressed);
     console.log(wrongGuesses)
-    document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
+    document.getElementById('wrong-text').innerHTML = ` Fel bokstav, gissa igen! <br> ${wrongGuesses.join(' ')}`
   }
   }
     if (wrongGuesses.length === 1) {
