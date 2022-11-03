@@ -34,12 +34,16 @@ main {
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem auto;
 }
+main figure {
+  grid-column: auto / span 1;
+}
 
 main section {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    grid-column: auto / span 1;
 }
 
 
