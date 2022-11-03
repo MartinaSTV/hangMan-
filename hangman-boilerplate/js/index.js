@@ -101,6 +101,7 @@ function gameStart(){
           playAgainModal.style.display = "block";
           playAgain.style.visibility = `visible`
           document.querySelector(`.result`).innerHTML = `Du vann!!!!`
+          clearInterval(timerInterval)
         }
       
   } 
@@ -127,13 +128,14 @@ function gameStart(){
     if (wrongGuesses.length === 5) {
       document.getElementById('legs').style.opacity = '1'
     }
-    if (wrongGuesses.length === 6 || setInterval === 60) {
+    if (wrongGuesses.length === 6) {
      
       playAgain.style.visibility = `visible`
   
       playAgainModal.style.display = "block";
       document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${chosenWord.join('')}`
      // document.getElementById('right-text').innerHTML = `Ordet var: ${chosenWord.join('')}`
+     clearInterval(timerInterval)
   
   
     } 
