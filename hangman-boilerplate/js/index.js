@@ -11,8 +11,49 @@ let rightLetter = []; // NY
 let playAgain = document.querySelector(`.reloadbutton`)
 let  playAgainModal = document.querySelector(`.modal`)
 
+
+
+const timer = document.getElementById('timer');
+let timerInterval;
+
+startTinmer = () => {
+
+clearInterval(timerInterval); 
+let second = 0, minute = 0;
+
+timerInterval = setInterval(function () {
+  timer.innerHTML =
+    (minute < 10 ? '0' + minute : minute) +
+    ':' +
+    (second < 10 ? '0' + second : second);
+
+  second++;
+
+  if (second > 60) {
+    
+    playAgain.style.visibility = `visible`
+    playAgainModal.style.display = "block";
+    document.querySelector(`.result`).innerHTML = `Tiden gick ut!`
+
+    clearInterval(timerInterval)
+  }
+  }, 1000);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 start = document.querySelector(`.startGame`)
   start.addEventListener(`click`, ()=>{
+    onclick= startTinmer();
     start.style.visibility = `hidden`
     gameStart()
   
@@ -86,7 +127,7 @@ function gameStart(){
     if (wrongGuesses.length === 5) {
       document.getElementById('legs').style.opacity = '1'
     }
-    if (wrongGuesses.length === 6) {
+    if (wrongGuesses.length === 6 || setInterval === 60) {
      
       playAgain.style.visibility = `visible`
   
@@ -96,6 +137,7 @@ function gameStart(){
   
   
     } 
+
     
    });
 
