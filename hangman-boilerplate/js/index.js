@@ -68,10 +68,9 @@ if (correctGuess === false) {
   wrongGuesses.push(keyPressed);
   console.log(wrongGuesses)
 
-
-
   document.getElementById('wrong-text').innerHTML = `${wrongGuesses.join(' ')} är fel bokstav, gissa igen!`
 }
+
 
 
   if (wrongGuesses.length === 1) {
