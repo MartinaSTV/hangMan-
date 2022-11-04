@@ -19,10 +19,7 @@ figure.legs     svg #legs      { opacity: 0; }
 
 body {
     height: 100vh;
-
     background-color: #ced4da;
-    
-
 }
 
 header {
@@ -30,12 +27,13 @@ header {
     display:flex;
     justify-content: center;
     align-items: center;
-
     padding: 5rem;
   }
+
   header .pumpaFirst {
     width: 5rem;
   }
+
 header .pumpaSecond {
   width: 5rem;
 }
@@ -53,9 +51,8 @@ header h1 {
 
     flex-direction: column;
     font-family: 'Creepster', cursive;
-
-
 }
+
 .startGame{
     visibility: visible;
     padding: 10px;
@@ -67,8 +64,6 @@ header h1 {
     font-size: 1.5rem;
     border-radius: 10px;
     background-color: rgb(255, 102, 0);
-
-
 }
 
 main {
@@ -78,6 +73,7 @@ main {
     
     margin: 2rem auto;
 }
+
 main .gridFigure {
   grid-column: auto / span 1;
   
@@ -93,14 +89,14 @@ main section {
     align-items: center;
     flex-direction: column;
     grid-column: auto / span 1;
-    
-  
 }
+
 #right-text {
   font-size: 2.5rem;
   font-family: 'Creepster', cursive;
   color: black;
 }
+
 #wrong-text {
   font-size: 2.5rem;
   font-family: 'Creepster', cursive;
@@ -108,13 +104,11 @@ main section {
 }
 
 #countdown {
-
   font-size: 1.5rem;
 
 }
 
 .modal {
-  
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -129,11 +123,9 @@ main section {
     transition: all 3s ease;
   }
   
-
   .modal-content {
 
-    background: url(/hangMan-/images/5963436skylt.jpg);
-
+    background: url(/hangman-boilerplate/images/5963436skylt.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -146,8 +138,7 @@ main section {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   
   }
-
-
+  
   .modal-header {
     padding: 6px 16px;
     color: black;
@@ -164,8 +155,6 @@ main section {
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   
-   
 
 }
 
@@ -188,21 +177,6 @@ main section {
     margin-top: 2.5rem;
     border-radius: 10px;
 }
-
-/* 
-.modal-footer {
-    margin-top: 10rem;
-    
-    padding: 2px 16px;
-    background-color: orange;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-  }
-  
-  */
 
   .close {
     color: black;
@@ -233,20 +207,3 @@ font-size: 3rem;
 
   }
 
-
-
-  /*function timer(){
-  countdownEL.innerHTML = `${timeSecond} sekunder kvar!`;
-
-const countDown = setInterval (()=>{
-  timeSecond--;
-  countdownEL.innerHTML = `${timeSecond} sekunder kvar!`;
-  if(timeSecond<0 || timeSecond<1) {
-    clearInterval(countDown)
-  } if (timeSecond === 0){
-    playAgain.style.visibility = `visible`
-    document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${chosenWord.join('')}`
-    playAgainModal.style.display = "block";
-  }
-},1000)
-}

@@ -46,18 +46,13 @@ start = document.querySelector(`.startGame`)
   
   let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; 
   LossInCounter.push(randomWord);
-  
-  console.log(randomWord);
   let splitRandomWord = randomWord.split('');  
    
   for (i =0; i<splitRandomWord.length; i++){
       rightGuess.push('_');
-      
   }
   
   document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
-  
-  
   addEventListener('keypress', (event) => {
   
     let keyPressed = event.key
@@ -65,10 +60,8 @@ start = document.querySelector(`.startGame`)
       
        } else  {
     let correctGuess = false;
-    console.log(keyPressed);
       
-    for(i =0; i <splitRandomWord.length; i++){
-      console.log(splitRandomWord[i]);  
+    for(i =0; i <splitRandomWord.length; i++){  
       
       if(splitRandomWord[i] === keyPressed){
           
@@ -79,21 +72,17 @@ start = document.querySelector(`.startGame`)
           document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
     }    
          if (rightLetter.length === randomWord.length){ 
-          
-          
+
           playAgainModal.style.display = "block";
           playAgain.style.visibility = `visible`;
           document.querySelector(`.result`).innerHTML = `Du vann! <br> Ordet var: <br> ${splitRandomWord.join('')}`;
           clearInterval(countDown);
         }
-      
   } 
   
   if (correctGuess === false) {
     
     wrongGuesses.push(keyPressed);
-
-    console.log(wrongGuesses);
     document.getElementById('wrong-text').innerHTML = `Fel bokstäver <br/> ${wrongGuesses.join(' ')}`
 
   }
@@ -113,24 +102,19 @@ start = document.querySelector(`.startGame`)
     if (wrongGuesses.length === 5) {
       document.getElementById('legs').style.opacity = '1';
     }
-    if (wrongGuesses.length === 6 || setInterval === 60) {
+    if (wrongGuesses.length === 6) {
      
       playAgain.style.visibility = `visible`;
       playAgainModal.style.display = "block";
 
       document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${splitRandomWord.join('')}`
       clearInterval(countDown);
-      } 
-      
-
+      }
     
   });
 
 }
 
-
-
- 
  let close = document.getElementsByClassName("close")[0];
  close.onclick = function() {
   modal.style.display = "none";
@@ -138,8 +122,4 @@ start = document.querySelector(`.startGame`)
 playAgain.addEventListener(`click`, ()=>{
     location.reload();
 })
-
-
-
-
 
