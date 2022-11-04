@@ -56,9 +56,7 @@ start = document.querySelector(`.startGame`)
   addEventListener('keypress', (event) => {
   
     let keyPressed = event.key
-    if(keyPressed >1){
-      alert(`en i taget tack!`)
-    }
+    
     if (rightLetter.includes(keyPressed) || wrongGuesses.includes(keyPressed)) {
       
        } else  {
