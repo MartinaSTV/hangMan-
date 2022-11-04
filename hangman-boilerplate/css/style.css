@@ -19,11 +19,18 @@ figure.legs     svg #legs      { opacity: 0; }
 
 body {
     height: 100vh;
+<<<<<<< HEAD
     background-color: grey;
     background: url(/);
     background-position: center;
     
      }
+=======
+    background: url(/hangman-boilerplate/images/360_F_439674303_k5BABaZqeHhp2JfYxfsRl9h40FNi9WGk.jpg);
+    background-position: center;
+    background-size: cover;
+}
+>>>>>>> 2cb82bf8e23314c9be9bec9db74d2a683fc6a5f2
 
 header {
     height: 10rem;
@@ -92,13 +99,18 @@ main section {
 #right-text {
   font-size: 2.5rem;
   font-family: 'Creepster', cursive;
+  color: black;
 }
 #wrong-text {
   font-size: 2.5rem;
   font-family: 'Creepster', cursive;
+  color: black;
 }
 
 #countdown {
+
+  color: black;
+  font-size: 1.5rem;
   
 }
 

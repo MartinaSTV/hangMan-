@@ -42,7 +42,7 @@ start = document.querySelector(`.startGame`)
 
   });
 
-function gameStart(){
+ function gameStart(){
   
   let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; 
   LossInCounter.push(randomWord);
@@ -121,7 +121,12 @@ function gameStart(){
       clearInterval(countDown);
       }
     
+<<<<<<< HEAD
    });
+=======
+  });
+
+>>>>>>> 2cb82bf8e23314c9be9bec9db74d2a683fc6a5f2
 }
 
  let close = document.getElementsByClassName("close")[0];
