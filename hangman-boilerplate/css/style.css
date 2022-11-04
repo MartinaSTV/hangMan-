@@ -20,15 +20,19 @@ figure.legs     svg #legs      { opacity: 0; }
 body {
     height: 100vh;
     background-color: grey;
-}
+    background: url(/);
+    background-position: center;
+    
+     }
 
 header {
     height: 10rem;
     display:flex;
     justify-content: center;
     align-items: center;
-
     padding: 5rem;
+    
+    
   }
   header .pumpaFirst {
     width: 5rem;
@@ -116,7 +120,7 @@ main section {
   
 
   .modal-content {
-    background: url(/hangMan-/images/istockphoto-1338907781-170667a.jpg);
+    background: url(/hangman-boilerplate/images/685842.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -129,7 +133,7 @@ main section {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   
   }
-
+  
 
   .modal-header {
     padding: 6px 16px;
@@ -147,8 +151,6 @@ main section {
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   
-   
 
 }
 
@@ -172,20 +174,6 @@ main section {
     border-radius: 10px;
 }
 
-/* 
-.modal-footer {
-    margin-top: 10rem;
-    
-    padding: 2px 16px;
-    background-color: orange;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-  }
-  
-  */
 
   .close {
     color: black;
@@ -215,19 +203,3 @@ color: white;
 font-size: 3rem;
 
   }
-
-  /*function timer(){
-  countdownEL.innerHTML = `${timeSecond} sekunder kvar!`;
-
-const countDown = setInterval (()=>{
-  timeSecond--;
-  countdownEL.innerHTML = `${timeSecond} sekunder kvar!`;
-  if(timeSecond<0 || timeSecond<1) {
-    clearInterval(countDown)
-  } if (timeSecond === 0){
-    playAgain.style.visibility = `visible`
-    document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${chosenWord.join('')}`
-    playAgainModal.style.display = "block";
-  }
-},1000)
-}
