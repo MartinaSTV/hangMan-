@@ -19,7 +19,8 @@ figure.legs     svg #legs      { opacity: 0; }
 
 body {
     height: 100vh;
-    background-color: grey;
+    background-color: #ced4da;
+    
 }
 
 header {
@@ -64,18 +65,26 @@ main {
     max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    
     margin: 2rem auto;
 }
-main figure {
+main .gridFigure {
   grid-column: auto / span 1;
+  
+  
 }
+main svg {
+  height: 400px;
 
+}
 main section {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     grid-column: auto / span 1;
+    
+  
 }
 #right-text {
   font-size: 2.5rem;
@@ -87,7 +96,7 @@ main section {
 }
 
 #countdown {
-  
+  font-size: 1.5rem;
 }
 
 .modal {
@@ -95,7 +104,7 @@ main section {
     display: none; 
     position: fixed; 
     z-index: 1; 
-    padding-top: 10rem; 
+    padding: 5rem;
     left: 0;
     top: 0;
     width: 100%; 
@@ -108,7 +117,7 @@ main section {
   
 
   .modal-content {
-    background: url(/hangMan-/images/istockphoto-1338907781-170667a.jpg);
+    background: url(/hangMan-/images/5963436skylt.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -207,6 +216,8 @@ color: white;
 font-size: 3rem;
 
   }
+
+
 
   /*function timer(){
   countdownEL.innerHTML = `${timeSecond} sekunder kvar!`;
