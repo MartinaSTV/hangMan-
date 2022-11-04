@@ -42,7 +42,7 @@ start = document.querySelector(`.startGame`)
 
   });
 
-function gameStart(){
+ function gameStart(){
   
   let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; 
   LossInCounter.push(randomWord);
@@ -124,7 +124,7 @@ function gameStart(){
       
 
     
-   });
+  });
 
 }
 

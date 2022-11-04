@@ -19,8 +19,10 @@ figure.legs     svg #legs      { opacity: 0; }
 
 body {
     height: 100vh;
+
     background-color: #ced4da;
     
+
 }
 
 header {
@@ -97,14 +99,18 @@ main section {
 #right-text {
   font-size: 2.5rem;
   font-family: 'Creepster', cursive;
+  color: black;
 }
 #wrong-text {
   font-size: 2.5rem;
   font-family: 'Creepster', cursive;
+  color: black;
 }
 
 #countdown {
+
   font-size: 1.5rem;
+
 }
 
 .modal {
@@ -125,7 +131,9 @@ main section {
   
 
   .modal-content {
+
     background: url(/hangMan-/images/5963436skylt.jpg);
+
     background-position: center;
     background-size: cover;
     position: relative;
