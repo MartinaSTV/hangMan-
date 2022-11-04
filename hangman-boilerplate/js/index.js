@@ -121,12 +121,8 @@ start = document.querySelector(`.startGame`)
       clearInterval(countDown);
       }
     
-<<<<<<< HEAD
-   });
-=======
   });
 
->>>>>>> 2cb82bf8e23314c9be9bec9db74d2a683fc6a5f2
 }
 
  let close = document.getElementsByClassName("close")[0];

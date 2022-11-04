@@ -18,19 +18,11 @@ figure.arms     svg #arms      { opacity: 0; }
 figure.legs     svg #legs      { opacity: 0; }
 
 body {
-    height: 100vh;
-<<<<<<< HEAD
-    background-color: grey;
-    background: url(/);
-    background-position: center;
-    
-     }
-=======
+    min-height: 100vh;
     background: url(/hangman-boilerplate/images/360_F_439674303_k5BABaZqeHhp2JfYxfsRl9h40FNi9WGk.jpg);
     background-position: center;
     background-size: cover;
 }
->>>>>>> 2cb82bf8e23314c9be9bec9db74d2a683fc6a5f2
 
 header {
     height: 10rem;
@@ -38,8 +30,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 5rem;
-    
-    
+
   }
   header .pumpaFirst {
     width: 5rem;
@@ -75,18 +66,18 @@ header h1 {
     font-size: 1.5rem;
     border-radius: 10px;
     background-color: rgb(255, 102, 0);
-
-
 }
 
 main {
     max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
     margin: 2rem auto;
 }
 main figure {
   grid-column: auto / span 1;
+  
 }
 
 main section {
@@ -95,6 +86,7 @@ main section {
     align-items: center;
     flex-direction: column;
     grid-column: auto / span 1;
+    
 }
 #right-text {
   font-size: 2.5rem;
@@ -108,14 +100,12 @@ main section {
 }
 
 #countdown {
-
   color: black;
   font-size: 1.5rem;
   
 }
 
 .modal {
-  
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -214,4 +204,12 @@ main section {
 color: white;
 font-size: 3rem;
 
+  }
+
+  @media only screen and (max-width: 600px) {
+    main {
+      display: grid;
+      grid-template-columns: 1;
+      
+    }
   }
