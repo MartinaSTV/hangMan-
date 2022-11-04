@@ -119,14 +119,7 @@ function gameStart(){
 
       document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${splitRandomWord.join('')}`
       clearInterval(countDown);
-      } 
-      
-
-      playAgainModal.style.display = "block";
-      document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${chosenWord.join('')}`
-     clearInterval(timerInterval)
-
-    } 
+      }
     
    });
 }
