@@ -10,7 +10,6 @@ let rightGuess = [];
 let rightLetter = []; 
 let playAgain = document.querySelector(`.reloadbutton`);
 let playAgainModal = document.querySelector(`.modal`);
-
 let LossInCounter = [];
 
 const countdownEL = document.getElementById('countdown');
@@ -34,16 +33,16 @@ function timer(){
 },1000)
 };
 
-
 start = document.querySelector(`.startGame`)
   start.addEventListener(`click`, ()=>{
+
     onclick= timer();
     start.style.visibility = `hidden`;
     gameStart();
+
   });
 
 function gameStart(){
-  
   
   let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; 
   LossInCounter.push(randomWord);
@@ -93,8 +92,10 @@ function gameStart(){
   if (correctGuess === false) {
     
     wrongGuesses.push(keyPressed);
+
     console.log(wrongGuesses);
     document.getElementById('wrong-text').innerHTML = `Fel bokstäver <br/> ${wrongGuesses.join(' ')}`
+
   }
   }
     if (wrongGuesses.length === 1) {
@@ -112,14 +113,16 @@ function gameStart(){
     if (wrongGuesses.length === 5) {
       document.getElementById('legs').style.opacity = '1';
     }
-    if (wrongGuesses.length === 6) {
+    if (wrongGuesses.length === 6 || setInterval === 60) {
      
       playAgain.style.visibility = `visible`;
       playAgainModal.style.display = "block";
+
       document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${splitRandomWord.join('')}`
       clearInterval(countDown);
       } 
       
+
     
    });
 
