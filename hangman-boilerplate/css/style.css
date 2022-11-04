@@ -28,6 +28,7 @@ header {
     display:flex;
     justify-content: center;
     align-items: center;
+
     padding: 5rem;
   }
   header .pumpaFirst {
@@ -47,17 +48,24 @@ header h1 {
  h2{
   text-align: center;
   font-size: 2rem;
+
+    flex-direction: column;
+    font-family: 'Creepster', cursive;
+
+
 }
 .startGame{
     visibility: visible;
     padding: 10px;
     margin: 10px;
     font-family: 'Creepster', cursive;
+
     width: 10rem;
     height: 4rem;
     font-size: 1.5rem;
     border-radius: 10px;
     background-color: rgb(255, 102, 0);
+
 
 }
 
