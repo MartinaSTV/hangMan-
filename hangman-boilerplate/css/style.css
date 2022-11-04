@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Creepster', cursive;
 }
 
 figure svg > * {
@@ -22,16 +23,41 @@ body {
 }
 
 header {
-    height: 4rem;
+    height: 10rem;
     display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    padding: 5rem;
+  }
+  header .pumpaFirst {
+    width: 5rem;
+  }
+header .pumpaSecond {
+  width: 5rem;
+}
+
+header h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 5rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  
+}
+ h2{
+  text-align: center;
+  font-size: 2rem;
 }
 .startGame{
     visibility: visible;
     padding: 10px;
     margin: 10px;
+    font-family: 'Creepster', cursive;
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: rgb(255, 102, 0);
+
 }
 
 main {
@@ -51,18 +77,21 @@ main section {
     flex-direction: column;
     grid-column: auto / span 1;
 }
+#right-text {
+  font-size: 2.5rem;
+  font-family: 'Creepster', cursive;
+}
+#wrong-text {
+  font-size: 2.5rem;
+  font-family: 'Creepster', cursive;
+}
 
-
-.reloadbutton{
-    visibility:hidden ;
-    padding: 1rem 5rem;
-    background-color: orange;
-    color: #000;
-    font-size: 2rem;
-    cursor: pointer;
+#countdown {
+  
 }
 
 .modal {
+  
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -74,17 +103,20 @@ main section {
     overflow: auto; 
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4); 
-    transition: all 10s ease;
+    transition: all 3s ease;
   }
   
 
   .modal-content {
+    background: url(/hangMan-/images/istockphoto-1338907781-170667a.jpg);
+    background-position: center;
+    background-size: cover;
     position: relative;
     background-color: black;
     margin: auto;
     padding: 0;
     border: 2px solid black;
-    width: 70rem;
+    width: 40rem;
     height: 32rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   
@@ -93,21 +125,21 @@ main section {
 
   .modal-header {
     padding: 6px 16px;
-    background-color: orange;
     color: black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:flex-end;
   }
   
   .modal-body {
     
-  margin-top: 8rem;
+  margin-top: 5rem;
    padding: 2rem 1rem;
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: black;
+   flex-direction: column;
+   
    
 
 }
@@ -115,10 +147,22 @@ main section {
 .modal-body h2 {
     
   padding-right: 2rem;
-  color: orange;
   font-size: 2rem;
+  text-align: center;
+  color: white;
+  font-weight: lighter;
   }
-  
+
+  .reloadbutton{
+    visibility:hidden ;
+    padding: 1rem 3rem;
+    background-color: orange;
+    color: #000;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    border-radius: 10px;
+}
 
 /* 
 .modal-footer {
@@ -140,6 +184,13 @@ main section {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    background-color: orange;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
 
   }
   
@@ -152,7 +203,23 @@ main section {
   
   .result {
 
-color: orange;
+color: white;
+font-size: 3rem;
 
   }
 
+  /*function timer(){
+  countdownEL.innerHTML = `${timeSecond} sekunder kvar!`;
+
+const countDown = setInterval (()=>{
+  timeSecond--;
+  countdownEL.innerHTML = `${timeSecond} sekunder kvar!`;
+  if(timeSecond<0 || timeSecond<1) {
+    clearInterval(countDown)
+  } if (timeSecond === 0){
+    playAgain.style.visibility = `visible`
+    document.querySelector(`.result`).innerHTML = `Du förlorade <br> Ordet var: <br> ${chosenWord.join('')}`
+    playAgainModal.style.display = "block";
+  }
+},1000)
+}
