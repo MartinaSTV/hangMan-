@@ -18,10 +18,11 @@ figure.arms     svg #arms      { opacity: 0; }
 figure.legs     svg #legs      { opacity: 0; }
 
 body {
-    min-height: 100vh;
-    background: url(/hangman-boilerplate/images/360_F_439674303_k5BABaZqeHhp2JfYxfsRl9h40FNi9WGk.jpg);
-    background-position: center;
-    background-size: cover;
+    height: 100vh;
+
+    background-color: #ced4da;
+    
+
 }
 
 header {
@@ -72,14 +73,18 @@ main {
     max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1;
+    
     margin: 2rem auto;
 }
-main figure {
+main .gridFigure {
   grid-column: auto / span 1;
   
+  
 }
+main svg {
+  height: 400px;
 
+}
 main section {
     display: flex;
     justify-content: space-around;
@@ -87,6 +92,7 @@ main section {
     flex-direction: column;
     grid-column: auto / span 1;
     
+  
 }
 #right-text {
   font-size: 2.5rem;
@@ -100,16 +106,15 @@ main section {
 }
 
 #countdown {
-  color: black;
   font-size: 1.5rem;
-  
+
 }
 
 .modal {
     display: none; 
     position: fixed; 
     z-index: 1; 
-    padding-top: 10rem; 
+    padding: 5rem;
     left: 0;
     top: 0;
     width: 100%; 
@@ -122,7 +127,9 @@ main section {
   
 
   .modal-content {
-    background: url(/hangman-boilerplate/images/685842.png);
+
+    background: url(/hangMan-/images/5963436skylt.jpg);
+
     background-position: center;
     background-size: cover;
     position: relative;
@@ -206,10 +213,3 @@ font-size: 3rem;
 
   }
 
-  @media only screen and (max-width: 600px) {
-    main {
-      display: grid;
-      grid-template-columns: 1;
-      
-    }
-  }
