@@ -12,6 +12,8 @@ let playAgain = document.querySelector(`.reloadbutton`);
 let playAgainModal = document.querySelector(`.modal`);
 let LossInCounter = [];
 
+
+
 const countdownEL = document.getElementById('countdown');
 let timeSecond = 60;
 let countDown;
@@ -43,7 +45,7 @@ start = document.querySelector(`.startGame`)
   });
 
  function gameStart(){
-  
+
   let randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; 
   LossInCounter.push(randomWord);
   let splitRandomWord = randomWord.split('');  
@@ -53,12 +55,15 @@ start = document.querySelector(`.startGame`)
   }
   
   document.getElementById('right-text').innerHTML = `${rightGuess.join(' ')}`
+
   addEventListener('keypress', (event) => {
-  
+
     let keyPressed = event.key
-    
+
+  
+
     if (rightLetter.includes(keyPressed) || wrongGuesses.includes(keyPressed)) {
-      
+    
        } else  {
     let correctGuess = false;
       
@@ -82,6 +87,7 @@ start = document.querySelector(`.startGame`)
   } 
   
   if (correctGuess === false) {
+    
     
     wrongGuesses.push(keyPressed);
     document.getElementById('wrong-text').innerHTML = `Fel bokstäver <br/> ${wrongGuesses.join(' ')}`
@@ -123,4 +129,6 @@ start = document.querySelector(`.startGame`)
 playAgain.addEventListener(`click`, ()=>{
     location.reload();
 })
+
+
 
